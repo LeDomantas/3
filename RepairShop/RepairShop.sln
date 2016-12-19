@@ -7,6 +7,8 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "RepairShop", "RepairShop\Re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SampleDatabaseWalkthrough", "WindowsFormsApplication1\SampleDatabaseWalkthrough.csproj", "{DA11143C-5529-414A-BD52-3E9AF9A0C99F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RepairShopUsingWindowsForms", "RepairShopUsingWindowsForms\RepairShopUsingWindowsForms.csproj", "{BFC60B2E-75B8-4DB7-9334-01D83CE6579B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -23,6 +25,10 @@ Global
 		{DA11143C-5529-414A-BD52-3E9AF9A0C99F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DA11143C-5529-414A-BD52-3E9AF9A0C99F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DA11143C-5529-414A-BD52-3E9AF9A0C99F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BFC60B2E-75B8-4DB7-9334-01D83CE6579B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BFC60B2E-75B8-4DB7-9334-01D83CE6579B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BFC60B2E-75B8-4DB7-9334-01D83CE6579B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BFC60B2E-75B8-4DB7-9334-01D83CE6579B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
