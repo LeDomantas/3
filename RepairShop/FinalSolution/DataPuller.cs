@@ -18,14 +18,15 @@ namespace FinalSolution
         public static DataSet PullData(string dataSetName, params string[] tableNames)
         {
             DataSet dataSet = new DataSet(dataSetName);
-            SqlDataAdapter dataAdapter;
-            SqlCommand command;
+            
             string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\leDomce\Desktop\RepairSho.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
+
             DataTable dataTable;
-            conn.Open();
+            SqlDataAdapter dataAdapter;
+            SqlCommand command;
             string query;
-            //string[] tableNames = new string[] { "Client", "Vehicle" };
+            conn.Open();
             foreach (string tableName in tableNames)
             {
                 dataTable = new DataTable(tableName);
@@ -35,8 +36,7 @@ namespace FinalSolution
                 dataAdapter = new SqlDataAdapter(command);
                 dataAdapter.Fill(dataTable);
                 dataAdapter.Dispose();
-                dataSet.Tables.Add(dataTable);
-                
+                dataSet.Tables.Add(dataTable);                
             }
             conn.Close();
             return dataSet;
