@@ -10,50 +10,36 @@ namespace FinalSolution
 {
     class DataPuller
     {
-        // your data table
-        private DataTable dataTable = new DataTable();
-        private DataSet dataSet = new DataSet();
-
+      
         public DataPuller()
         {
         }
 
-        // your method to pull data from database to datatable   
-        public void PullData()
+        public static DataSet PullData(string dataSetName, params string[] tableNames)
         {
-            string query = "select * from Client";
-
+            DataSet dataSet = new DataSet(dataSetName);
+            SqlDataAdapter dataAdapter;
+            SqlCommand command;
             string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\leDomce\Desktop\RepairSho.mdf;Integrated Security=True";
             SqlConnection conn = new SqlConnection(connString);
-
-            SqlCommand cmd = new SqlCommand(query, conn);
+            DataTable dataTable;
             conn.Open();
-
-            // create data adapter
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            // this will query your database and return the result to your datatable
-            da.Fill(dataSet);
-            da.Fill(dataTable);
-            conn.Close();
-            var columns = dataTable.Columns;
-            foreach (DataTable table in dataSet.Tables)
+            string query;
+            //string[] tableNames = new string[] { "Client", "Vehicle" };
+            foreach (string tableName in tableNames)
             {
-                Console.WriteLine(table + "\n");
-                foreach (DataColumn col in table.Columns)
-                {
-                    Console.Write(col + "\t");
-                }
-                foreach (DataRow row in table.Rows)
-                {
-                    Console.WriteLine("\t\t");
-                    foreach (var rowValue in row.ItemArray)
-                    {
-                        Console.Write(rowValue + "\t");
-                    }
-                }
-
+                dataTable = new DataTable(tableName);
+                query = "select * from " + tableName;
+                command = new SqlCommand(query, conn);
+                
+                dataAdapter = new SqlDataAdapter(command);
+                dataAdapter.Fill(dataTable);
+                dataAdapter.Dispose();
+                dataSet.Tables.Add(dataTable);
+                
             }
-            da.Dispose();
+            conn.Close();
+            return dataSet;
         }
     }
 }

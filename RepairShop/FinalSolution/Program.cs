@@ -11,9 +11,11 @@ namespace FinalSolution
     {
         static void Main(string[] args)
         {
-            DataSet dataBase;
+            DataSet repairShopData;
             
-            
+            repairShopData = DataPuller.PullData("RepairShop", "Client", "Vehicle", "Repair", "Mechanic");
+
+            DataSetWritter.WriteData(repairShopData);
         }
     }
 }
