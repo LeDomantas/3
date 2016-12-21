@@ -43,8 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataPuller.cs" />
+    <Compile Include="DataInserter.cs" />
+    <Compile Include="DataSelecter.cs" />
     <Compile Include="DataSetWritter.cs" />
+    <Compile Include="DataUpdater.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

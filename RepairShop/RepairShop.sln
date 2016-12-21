@@ -13,7 +13,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LecturerCodeTesting", "Cons
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestFurtherDataTable", "TestFurtherDataTable\TestFurtherDataTable.csproj", "{7DA2C94C-8840-4902-AA3B-6FF25BE1CC89}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalSolution", "FinalSolution\FinalSolution.csproj", "{FD46974C-1D05-403C-B9B0-1F942F9DD6EB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalConsoleSolution", "FinalSolution\FinalConsoleSolution.csproj", "{FD46974C-1D05-403C-B9B0-1F942F9DD6EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalWFSolution", "FinalWFSolution\FinalWFSolution.csproj", "{7BC11409-E806-463D-A03D-5F5172833003}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{FD46974C-1D05-403C-B9B0-1F942F9DD6EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FD46974C-1D05-403C-B9B0-1F942F9DD6EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FD46974C-1D05-403C-B9B0-1F942F9DD6EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC11409-E806-463D-A03D-5F5172833003}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC11409-E806-463D-A03D-5F5172833003}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC11409-E806-463D-A03D-5F5172833003}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC11409-E806-463D-A03D-5F5172833003}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

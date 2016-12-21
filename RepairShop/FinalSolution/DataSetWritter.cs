@@ -10,26 +10,54 @@ namespace FinalSolution
     class DataSetWritter
     {
 
-        public static void WriteData(DataSet dataToWrite)
+        public static void WriteData(DataSet dataToWrite, params string[] printTables)
         {
 
             foreach (DataTable table in dataToWrite.Tables)
             {
-                Console.WriteLine(table + "\n");
-                foreach (DataColumn col in table.Columns)
+                foreach (string tableName in printTables)
                 {
-                    Console.Write(col + "\t");
-                }
-                foreach (DataRow row in table.Rows)
-                {
-                    Console.WriteLine("\t\t");
-                    foreach (var rowValue in row.ItemArray)
+                    if (tableName == table.TableName)
                     {
-                        Console.Write(rowValue + "\t");
+                        Console.WriteLine(table + "\n");
+                        foreach (DataColumn col in table.Columns)
+                        {
+                            Console.Write(col + "\t");
+                        }
+                        foreach (DataRow row in table.Rows)
+                        {
+                            Console.WriteLine("\t\t");
+                            foreach (var rowValue in row.ItemArray)
+                            {
+                                Console.Write(rowValue + "\t");
+                            }
+                        }
+                        Console.WriteLine("\n--------------------------");
                     }
                 }
-                Console.WriteLine("\n--------------------------");
+            }
+        }
 
+        public static void WriteTableColumns(DataSet dataToWrite, params string[] printTables)
+        {
+            foreach (DataTable table in dataToWrite.Tables)
+            {
+                foreach (string needsPrinting in printTables)
+                {
+                    if (table.TableName == needsPrinting)
+                    {
+                        foreach (DataColumn column in table.Columns)
+                        {
+                            Console.Write(column.ColumnName + '\t');
+                        }
+                        Console.WriteLine();
+                        foreach (DataColumn column in table.Columns)
+                        {
+                            Console.Write(column.DataType.ToString() + '\t');
+                        }
+                        Console.WriteLine();
+                    }
+                }
             }
         }
     }

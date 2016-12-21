@@ -8,21 +8,22 @@ using System.Threading.Tasks;
 
 namespace FinalSolution
 {
-    class DataPuller
+    class DataSelecter
     {
       
-        public DataPuller()
+        public DataSelecter()
         {
         }
 
-        public static DataSet PullData(string dataSetName, params string[] tableNames)
+        public static DataSet SelectData(string connString, string dataSetName, params string[] tableNames)
         {
             DataSet dataSet = new DataSet(dataSetName);
-            
-            string connString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\leDomce\Desktop\RepairSho.mdf;Integrated Security=True";
-            SqlConnection conn = new SqlConnection(connString);
 
+            SqlConnection conn = new SqlConnection(connString);
+           
+            // TODO: DataTable (0,1)
             DataTable dataTable;
+            // TODO: DataAdapter (0,1)
             SqlDataAdapter dataAdapter;
             SqlCommand command;
             string query;
@@ -30,6 +31,7 @@ namespace FinalSolution
             foreach (string tableName in tableNames)
             {
                 dataTable = new DataTable(tableName);
+                // TODO: Select realizacija (0,1). REIKIA PERVADINTI KLASĘ
                 query = "select * from " + tableName;
                 command = new SqlCommand(query, conn);
                 
