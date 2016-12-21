@@ -1,0 +1,58 @@
+﻿@model RepairSite.Models.Repair
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Repair</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cost)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cost)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepairStartDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepairStartDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.RepairEndDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.RepairEndDate)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Mechanic.FirstName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Mechanic.FirstName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Vehicle.VIN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Vehicle.VIN)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.RepairID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

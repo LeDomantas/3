@@ -1,0 +1,57 @@
+﻿@model IEnumerable<RepairSite.Models.Repair>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cost)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RepairStartDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.RepairEndDate)
+        </th>
+        <th>
+            Mechanic
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Vehicle.VIN)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cost)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepairStartDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.RepairEndDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Mechanic.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Vehicle.VIN)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.RepairID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.RepairID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.RepairID })
+        </td>
+    </tr>
+}
+
+</table>
